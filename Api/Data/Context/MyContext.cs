@@ -6,8 +6,10 @@ using System.Text;
 
 namespace Data.Context
 {
-    class MyContext : DbContext
+   public class MyContext : DbContext
     {
+        public MyContext(DbContextOptions<MyContext> options) : base(options)  { }
         public DbSet<UserEntity> Users { get; set; }
+
     }
 }
